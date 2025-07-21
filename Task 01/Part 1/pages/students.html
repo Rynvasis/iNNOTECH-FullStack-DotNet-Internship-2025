@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>إدارة الطلبة</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+</head>
+<body style="background-color: #f8f9fa; font-family: Tahoma, sans-serif;">
+
+    <div class="container mt-4">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 style="color: #0d6efd;">👨‍🎓 إدارة الطلبة</h2>
+            <a href="../index.html" class="btn btn-secondary" style="padding: 8px 20px;">الرجوع للرئيسية</a>
+        </div>
+
+        <!-- زر إضافة طالب -->
+        <button class="btn btn-primary mb-3" onclick="toggleForm()" style="padding: 8px 20px;">➕ إضافة طالب جديد</button>
+
+        <!-- نموذج إضافة/تعديل طالب -->
+        <div id="studentForm" style="display: none; background-color: white; padding: 20px; border-radius: 10px;" class="mb-4 shadow">
+            <form onsubmit="saveStudent(event)">
+                <input type="hidden" id="editIndex">
+                <div class="row mb-3">
+                    <div class="col">
+                        <label>الاسم:</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="col">
+                        <label>الرقم الجامعي:</label>
+                        <input type="text" class="form-control" id="id" required>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label>الفرقة:</label>
+                        <select class="form-control" id="year" required>
+                            <option>الأولى</option>
+                            <option>الثانية</option>
+                            <option>الثالثة</option>
+                            <option>الرابعة</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label>القسم:</label>
+                        <input type="text" class="form-control" id="dept" required>
+                    </div>
+                </div>
+                <button class="btn btn-success">✔️ حفظ</button>
+            </form>
+        </div>
+
+        <!-- مربع البحث -->
+        <input type="text" class="form-control mb-3" placeholder="🔍 بحث عن طالب..." onkeyup="searchTable(this.value)">
+
+        <!-- جدول الطلبة -->
+        <div class="table-responsive">
+            <table class="table table-bordered text-center bg-white shadow" id="studentTable">
+                <thead class="table-light">
+                    <tr>
+                        <th>الاسم</th>
+                        <th>الرقم الجامعي</th>
+                        <th>الفرقة</th>
+                        <th>القسم</th>
+                        <th>إجراءات</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <tr>
+                        <td>أحمد</td>
+                        <td>20220123</td>
+                        <td>الثالثة</td>
+                        <td>نظم معلومات</td>
+                        <td>
+                            <button class="btn btn-sm btn-warning" onclick="editRow(this)">تعديل</button>
+                            <button class="btn btn-sm btn-danger" onclick="deleteRow(this)">حذف</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>محمد</td>
+                        <td>20220456</td>
+                        <td>الثانية</td>
+                        <td>علوم حاسب</td>
+                        <td>
+                            <button class="btn btn-sm btn-warning" onclick="editRow(this)">تعديل</button>
+                            <button class="btn btn-sm btn-danger" onclick="deleteRow(this)">حذف</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <!-- JavaScript للحذف والتعديل -->
+    <script>
+        function toggleForm() {
+            const form = document.getElementById("studentForm");
+            form.style.display = (form.style.display === "none") ? "block" : "none";
+            clearForm();
+        }
+
+        function clearForm() {
+            document.getElementById("name").value = "";
+            document.getElementById("id").value = "";
+            document.getElementById("year").value = "الأولى";
+            document.getElementById("dept").value = "";
+            document.getElementById("editIndex").value = "";
+        }
+
+        function saveStudent(event) {
+            event.preventDefault();
+            const name = document.getElementById("name").value;
+            const id = document.getElementById("id").value;
+            const year = document.getElementById("year").value;
+            const dept = document.getElementById("dept").value;
+            const editIndex = document.getElementById("editIndex").value;
+            const table = document.getElementById("tableBody");
+
+            if (editIndex === "") {
+                // إضافة جديد
+                const row = table.insertRow();
+                row.innerHTML = `
+                    <td>${name}</td>
+                    <td>${id}</td>
+                    <td>${year}</td>
+                    <td>${dept}</td>
+                    <td>
+                        <button class="btn btn-sm btn-warning" onclick="editRow(this)">تعديل</button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteRow(this)">حذف</button>
+                    </td>
+                `;
+            } else {
+                // تعديل
+                const row = table.rows[editIndex];
+                row.cells[0].innerText = name;
+                row.cells[1].innerText = id;
+                row.cells[2].innerText = year;
+                row.cells[3].innerText = dept;
+            }
+
+            clearForm();
+            toggleForm();
+        }
+
+        function editRow(btn) {
+            const row = btn.closest("tr");
+            const index = row.rowIndex - 1; // استبعاد رأس الجدول
+
+            document.getElementById("name").value = row.cells[0].innerText;
+            document.getElementById("id").value = row.cells[1].innerText;
+            document.getElementById("year").value = row.cells[2].innerText;
+            document.getElementById("dept").value = row.cells[3].innerText;
+            document.getElementById("editIndex").value = index;
+
+            document.getElementById("studentForm").style.display = "block";
+        }
+
+        function deleteRow(btn) {
+            btn.closest("tr").remove();
+        }
+
+        function searchTable(value) {
+            const rows = document.querySelectorAll("#studentTable tbody tr");
+            rows.forEach(row => {
+                const text = row.innerText;
+                row.style.display = text.includes(value) ? "" : "none";
+            });
+        }
+    </script>
+
+</body>
+</html>

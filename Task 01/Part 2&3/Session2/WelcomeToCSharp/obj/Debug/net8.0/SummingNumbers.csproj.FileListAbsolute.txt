@@ -1,0 +1,14 @@
+E:\iNNOTECH\Session 02\Session2\WelcomeToCSharp\bin\Debug\net8.0\SummingNumbers.exe
+E:\iNNOTECH\Session 02\Session2\WelcomeToCSharp\bin\Debug\net8.0\SummingNumbers.deps.json
+E:\iNNOTECH\Session 02\Session2\WelcomeToCSharp\bin\Debug\net8.0\SummingNumbers.runtimeconfig.json
+E:\iNNOTECH\Session 02\Session2\WelcomeToCSharp\bin\Debug\net8.0\SummingNumbers.dll
+E:\iNNOTECH\Session 02\Session2\WelcomeToCSharp\bin\Debug\net8.0\SummingNumbers.pdb
+E:\iNNOTECH\Session 02\Session2\WelcomeToCSharp\obj\Debug\net8.0\SummingNumbers.GeneratedMSBuildEditorConfig.editorconfig
+E:\iNNOTECH\Session 02\Session2\WelcomeToCSharp\obj\Debug\net8.0\SummingNumbers.AssemblyInfoInputs.cache
+E:\iNNOTECH\Session 02\Session2\WelcomeToCSharp\obj\Debug\net8.0\SummingNumbers.AssemblyInfo.cs
+E:\iNNOTECH\Session 02\Session2\WelcomeToCSharp\obj\Debug\net8.0\SummingNumbers.csproj.CoreCompileInputs.cache
+E:\iNNOTECH\Session 02\Session2\WelcomeToCSharp\obj\Debug\net8.0\SummingNumbers.dll
+E:\iNNOTECH\Session 02\Session2\WelcomeToCSharp\obj\Debug\net8.0\refint\SummingNumbers.dll
+E:\iNNOTECH\Session 02\Session2\WelcomeToCSharp\obj\Debug\net8.0\SummingNumbers.pdb
+E:\iNNOTECH\Session 02\Session2\WelcomeToCSharp\obj\Debug\net8.0\SummingNumbers.genruntimeconfig.cache
+E:\iNNOTECH\Session 02\Session2\WelcomeToCSharp\obj\Debug\net8.0\ref\SummingNumbers.dll

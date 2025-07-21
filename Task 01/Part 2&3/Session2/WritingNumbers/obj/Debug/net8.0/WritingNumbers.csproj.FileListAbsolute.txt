@@ -1,0 +1,14 @@
+E:\iNNOTECH\Session 02\Session2\WritingNumbers\bin\Debug\net8.0\WritingNumbers.exe
+E:\iNNOTECH\Session 02\Session2\WritingNumbers\bin\Debug\net8.0\WritingNumbers.deps.json
+E:\iNNOTECH\Session 02\Session2\WritingNumbers\bin\Debug\net8.0\WritingNumbers.runtimeconfig.json
+E:\iNNOTECH\Session 02\Session2\WritingNumbers\bin\Debug\net8.0\WritingNumbers.dll
+E:\iNNOTECH\Session 02\Session2\WritingNumbers\bin\Debug\net8.0\WritingNumbers.pdb
+E:\iNNOTECH\Session 02\Session2\WritingNumbers\obj\Debug\net8.0\WritingNumbers.GeneratedMSBuildEditorConfig.editorconfig
+E:\iNNOTECH\Session 02\Session2\WritingNumbers\obj\Debug\net8.0\WritingNumbers.AssemblyInfoInputs.cache
+E:\iNNOTECH\Session 02\Session2\WritingNumbers\obj\Debug\net8.0\WritingNumbers.AssemblyInfo.cs
+E:\iNNOTECH\Session 02\Session2\WritingNumbers\obj\Debug\net8.0\WritingNumbers.csproj.CoreCompileInputs.cache
+E:\iNNOTECH\Session 02\Session2\WritingNumbers\obj\Debug\net8.0\WritingNumbers.dll
+E:\iNNOTECH\Session 02\Session2\WritingNumbers\obj\Debug\net8.0\refint\WritingNumbers.dll
+E:\iNNOTECH\Session 02\Session2\WritingNumbers\obj\Debug\net8.0\WritingNumbers.pdb
+E:\iNNOTECH\Session 02\Session2\WritingNumbers\obj\Debug\net8.0\WritingNumbers.genruntimeconfig.cache
+E:\iNNOTECH\Session 02\Session2\WritingNumbers\obj\Debug\net8.0\ref\WritingNumbers.dll
